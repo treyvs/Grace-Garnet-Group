@@ -113,72 +113,141 @@ const HomePage = ({ navigateTo }) => {
     return () => clearInterval(interval);
   }, []);
 
+  const services = [
+    { 
+      id: 'hr-consulting', 
+      name: 'HR Consulting', 
+      icon: '👥', 
+      color: 'red',
+      description: 'Professional CV writing, LinkedIn optimization, and career coaching services',
+      image: null // No image provided yet
+    },
+    { 
+      id: 'foundation', 
+      name: 'Foundation', 
+      icon: '❤️', 
+      color: 'pink',
+      description: 'Charitable initiatives supporting communities and fostering positive change',
+      image: '/images/foundation-volunteers.png'
+    },
+    { 
+      id: 'interior-design', 
+      name: 'Interior Design', 
+      icon: '🎨', 
+      color: 'purple',
+      description: 'Creating inspiring spaces that reflect your vision and enhance functionality',
+      image: '/images/interior-design-1.jpeg'
+    },
+    { 
+      id: 'corporate-training', 
+      name: 'Corporate Training', 
+      icon: '📚', 
+      color: 'blue',
+      description: 'Customized training programs that empower organizational growth',
+      image: '/images/corporate-training.png'
+    },
+    { 
+      id: 'coaching', 
+      name: 'Coaching & Mentorship', 
+      icon: '🎯', 
+      color: 'green',
+      description: 'Personalized guidance to unlock your potential and achieve goals',
+      image: null // No image provided yet
+    },
+    { 
+      id: 'mediation', 
+      name: 'Mediation', 
+      icon: '⚖️', 
+      color: 'indigo',
+      description: 'Professional conflict resolution for lasting solutions',
+      image: '/images/mediation.png'
+    }
+  ];
+
   return (
     <>
-      <section className="hero-section-new">
-        <div className="hero-background"></div>
-        <div className="container hero-content-new">
-          <div className="hero-badge">🏆 East Africa's Premier Professional Services Provider</div>
-          <h1 className="hero-title-new animate-fade-in">
-            Empowering <span className="gradient-text">Excellence</span><br />
+      {/* Enhanced Hero Section */}
+      <section className="hero-section-enhanced">
+        <div className="hero-image-background">
+          <img src="/images/homepage-hero.jpg" alt="Grace Garnet Group Team" className="hero-bg-image" />
+          <div className="hero-overlay"></div>
+        </div>
+        <div className="container hero-content-overlay">
+          <div className="hero-badge-enhanced">
+            <span className="badge-icon">🏆</span>
+            <span>East Africa's Premier Professional Services Provider</span>
+          </div>
+          <h1 className="hero-title-enhanced animate-fade-in">
+            Empowering <span className="gradient-text-enhanced">Excellence</span><br />
             Across Every Dimension
           </h1>
-          <p className="hero-description-new animate-fade-in-delay">
+          <p className="hero-description-enhanced animate-fade-in-delay">
             We are a multi-disciplinary consultancy dedicated to transforming careers, organizations, and communities through expert guidance and unwavering commitment to excellence.
           </p>
           <div className="hero-buttons animate-fade-in-delay-2">
-            <button onClick={() => navigateTo('contact')} className="btn btn-primary-new">
+            <button onClick={() => navigateTo('contact')} className="btn btn-hero-primary">
               Get Started Today <span className="btn-arrow">→</span>
             </button>
-            <button onClick={() => navigateTo('about')} className="btn btn-secondary-new">
+            <button onClick={() => navigateTo('about')} className="btn btn-hero-secondary">
               Learn More About Us
             </button>
           </div>
           
-          <div className="stats-grid-new">
+          <div className="stats-grid-enhanced">
             {[
               { icon: '🎯', number: '6', label: 'Service Divisions' },
               { icon: '👥', number: '500+', label: 'Clients Served' },
               { icon: '⭐', number: '99%', label: 'Satisfaction Rate' },
               { icon: '🏆', number: '10+', label: 'Years Experience' }
             ].map((stat, idx) => (
-              <div key={idx} className="stat-card-new">
+              <div key={idx} className="stat-card-enhanced">
                 <div className="stat-icon">{stat.icon}</div>
-                <div className="stat-number-new">{stat.number}</div>
-                <div className="stat-label-new">{stat.label}</div>
+                <div className="stat-number-enhanced">{stat.number}</div>
+                <div className="stat-label-enhanced">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="services-showcase">
+      {/* Services Grid with Images */}
+      <section className="services-showcase-enhanced">
         <div className="container">
           <div className="section-header-new">
             <span className="section-badge">Our Expertise</span>
             <h2 className="section-title-new">Comprehensive Solutions for Every Need</h2>
+            <p className="section-description-new">
+              Six specialized divisions working in harmony to deliver exceptional results
+            </p>
           </div>
 
-          <div className="services-grid-new">
-            {[
-              { id: 'hr-consulting', name: 'HR Consulting', icon: '👥', color: 'red' },
-              { id: 'foundation', name: 'Foundation', icon: '❤️', color: 'pink' },
-              { id: 'interior-design', name: 'Interior Design', icon: '🎨', color: 'purple' },
-              { id: 'corporate-training', name: 'Corporate Training', icon: '📚', color: 'blue' },
-              { id: 'coaching', name: 'Coaching & Mentorship', icon: '🎯', color: 'green' },
-              { id: 'mediation', name: 'Mediation', icon: '⚖️', color: 'indigo' }
-            ].map((service, idx) => (
+          <div className="services-grid-enhanced">
+            {services.map((service, idx) => (
               <div 
                 key={service.id} 
-                className={`service-card-new service-card-${service.color}`}
+                className={`service-card-enhanced service-card-${service.color}`}
                 onClick={() => navigateTo(service.id)}
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="service-card-background"></div>
-                <div className="service-card-content">
-                  <div className="service-icon-new">{service.icon}</div>
-                  <h3 className="service-name-new">{service.name}</h3>
-                  <div className="service-link-new">Explore Service <span className="arrow-icon">→</span></div>
+                {service.image ? (
+                  <div className="service-card-image">
+                    <img src={service.image} alt={service.name} />
+                    <div className="service-card-overlay">
+                      <div className="service-icon-enhanced">{service.icon}</div>
+                      <h3 className="service-name-enhanced">{service.name}</h3>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={`service-card-no-image service-bg-${service.color}`}>
+                    <div className="service-icon-enhanced">{service.icon}</div>
+                    <h3 className="service-name-enhanced">{service.name}</h3>
+                  </div>
+                )}
+                <div className="service-card-content-enhanced">
+                  <p className="service-desc-enhanced">{service.description}</p>
+                  <div className="service-link-enhanced">
+                    Explore Service <span className="arrow-icon">→</span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -186,6 +255,7 @@ const HomePage = ({ navigateTo }) => {
         </div>
       </section>
 
+      {/* Keep your existing testimonials and CTA sections */}
       <section className="testimonials-carousel-section">
         <div className="container">
           <div className="section-header-new">
@@ -291,7 +361,9 @@ const AboutPage = () => (
 );
 
 // Service Pages (reusable component)
-const ServicePageTemplate = ({ title, icon, description, features }) => (
+// UPDATED Service Page Template with Images
+const ServicePageTemplate = ({ title, icon, description, features, imagePath, imageAlt }) =>
+  (
   <div className="page-content">
     <section className="page-hero">
       <div className="container">
@@ -300,6 +372,17 @@ const ServicePageTemplate = ({ title, icon, description, features }) => (
         <p className="page-subtitle">{description}</p>
       </div>
     </section>
+
+    {/* NEW: Hero Image Section */}
+    {imagePath && (
+      <section className="service-image-section">
+        <div className="container">
+          <div className="service-image-container">
+            <img src={imagePath} alt={imageAlt} className="service-hero-image" />
+          </div>
+        </div>
+      </section>
+    )}
 
     <section className="content-section">
       <div className="container">
@@ -318,6 +401,72 @@ const ServicePageTemplate = ({ title, icon, description, features }) => (
   </div>
 );
 
+// UPDATED Service Pages with Images
+const InteriorDesignPage = () => (
+  <ServicePageTemplate
+    title="Interior Design Services"
+    icon="🎨"
+    description="Transform spaces into inspiring environments that reflect your vision and enhance functionality."
+    imagePath="/images/interior-design-1.jpeg"
+    imageAlt="Professional interior design showcase"
+    features={[
+      { icon: '🏠', title: 'Residential Design', description: 'Beautiful, functional homes that reflect your lifestyle' },
+      { icon: '🏢', title: 'Commercial Spaces', description: 'Office and retail environments that enhance productivity' },
+      { icon: '📐', title: 'Space Planning', description: 'Optimize every square foot for maximum functionality' },
+      { icon: '💡', title: 'Lighting Design', description: 'Strategic lighting that transforms ambiance' }
+    ]}
+  />
+);
+
+const FoundationPage = () => (
+  <ServicePageTemplate
+    title="Grace Garnet Foundation"
+    icon="❤️"
+    description="Creating lasting positive change through education, skills development, and social impact programs."
+    imagePath="/images/foundation-volunteers.png"
+    imageAlt="Foundation volunteers helping community"
+    features={[
+      { icon: '🎓', title: 'Educational Support', description: 'Scholarships and mentorship for underprivileged youth' },
+      { icon: '👷', title: 'Skills Development', description: 'Vocational training programs that create opportunities' },
+      { icon: '🤝', title: 'Community Outreach', description: 'Grassroots initiatives addressing local needs' },
+      { icon: '💪', title: 'Youth Empowerment', description: 'Leadership and entrepreneurship programs' }
+    ]}
+  />
+);
+
+const CorporateTrainingPage = () => (
+  <ServicePageTemplate
+    title="Corporate Training & Development"
+    icon="📚"
+    description="Empower your organization with customized training programs that drive real results."
+    imagePath="/images/corporate-training.png"
+    imageAlt="Corporate training session in progress"
+    features={[
+      { icon: '👔', title: 'Leadership Development', description: 'Build effective leaders who inspire teams' },
+      { icon: '🤝', title: 'Team Building', description: 'Strengthen team dynamics and collaboration' },
+      { icon: '📊', title: 'Skills Training', description: 'Technical and soft skills development' },
+      { icon: '🎯', title: 'Performance Management', description: 'Drive organizational excellence' }
+    ]}
+  />
+);
+
+const MediationPage = () => (
+  <ServicePageTemplate
+    title="Mediation Services"
+    icon="⚖️"
+    description="Professional conflict resolution for lasting solutions and restored relationships."
+    imagePath="/images/mediation.png"
+    imageAlt="Professional mediation session"
+    features={[
+      { icon: '🏢', title: 'Workplace Mediation', description: 'Resolve workplace conflicts professionally' },
+      { icon: '💼', title: 'Commercial Disputes', description: 'Business dispute resolution services' },
+      { icon: '👨‍👩‍👧', title: 'Family Mediation', description: 'Compassionate family conflict resolution' },
+      { icon: '🤝', title: 'Conflict Resolution Training', description: 'Build conflict resolution skills in your team' }
+    ]}
+  />
+);
+
+// Keep HRConsultingPage and CoachingPage as they were
 const HRConsultingPage = () => (
   <ServicePageTemplate
     title="HR Consulting & Career Services"
@@ -332,48 +481,6 @@ const HRConsultingPage = () => (
   />
 );
 
-const FoundationPage = () => (
-  <ServicePageTemplate
-    title="Grace Garnet Foundation"
-    icon="❤️"
-    description="Creating lasting positive change through education, skills development, and social impact programs."
-    features={[
-      { icon: '🎓', title: 'Educational Support', description: 'Scholarships and mentorship for underprivileged youth' },
-      { icon: '👷', title: 'Skills Development', description: 'Vocational training programs' },
-      { icon: '🤝', title: 'Community Outreach', description: 'Grassroots initiatives addressing local needs' },
-      { icon: '💪', title: 'Youth Empowerment', description: 'Leadership and entrepreneurship programs' }
-    ]}
-  />
-);
-
-const InteriorDesignPage = () => (
-  <ServicePageTemplate
-    title="Interior Design Services"
-    icon="🎨"
-    description="Transform spaces into inspiring environments that reflect your vision and enhance functionality."
-    features={[
-      { icon: '🏠', title: 'Residential Design', description: 'Beautiful, functional homes' },
-      { icon: '🏢', title: 'Commercial Spaces', description: 'Office and retail environments' },
-      { icon: '📐', title: 'Space Planning', description: 'Optimize space utilization' },
-      { icon: '💡', title: 'Lighting Design', description: 'Strategic lighting solutions' }
-    ]}
-  />
-);
-
-const CorporateTrainingPage = () => (
-  <ServicePageTemplate
-    title="Corporate Training & Development"
-    icon="📚"
-    description="Empower your organization with customized training programs."
-    features={[
-      { icon: '👔', title: 'Leadership Development', description: 'Build effective leaders' },
-      { icon: '🤝', title: 'Team Building', description: 'Strengthen team dynamics' },
-      { icon: '📊', title: 'Skills Training', description: 'Technical and soft skills' },
-      { icon: '🎯', title: 'Performance Management', description: 'Drive organizational excellence' }
-    ]}
-  />
-);
-
 const CoachingPage = () => (
   <ServicePageTemplate
     title="Coaching & Mentorship"
@@ -384,20 +491,6 @@ const CoachingPage = () => (
       { icon: '🗺️', title: 'Career Mentorship', description: 'Strategic career guidance' },
       { icon: '🌱', title: 'Personal Development', description: 'Holistic growth programs' },
       { icon: '🎯', title: 'Goal Achievement', description: 'Structured goal-setting support' }
-    ]}
-  />
-);
-
-const MediationPage = () => (
-  <ServicePageTemplate
-    title="Mediation Services"
-    icon="⚖️"
-    description="Professional conflict resolution for lasting solutions."
-    features={[
-      { icon: '🏢', title: 'Workplace Mediation', description: 'Resolve workplace conflicts' },
-      { icon: '💼', title: 'Commercial Disputes', description: 'Business dispute resolution' },
-      { icon: '👨‍👩‍👧', title: 'Family Mediation', description: 'Family conflict resolution' },
-      { icon: '🤝', title: 'Conflict Resolution Training', description: 'Build conflict resolution skills' }
     ]}
   />
 );
@@ -462,7 +555,7 @@ const ContactPage = () => {
                 <span className="contact-icon-page">📍</span>
                 <div>
                   <h4>Location</h4>
-                  <p>Nairobi, Kenya</p>
+                  <p>Nairobi (Along Ngong Road), Kenya</p>
                 </div>
               </div>
             </div>
