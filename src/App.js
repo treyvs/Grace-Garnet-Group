@@ -35,7 +35,6 @@ const GraceGarnetWebsite = () => {
       {currentPage === 'about' && <AboutPage />}
       {currentPage === 'hr-consulting' && <HRConsultingPage />}
       {currentPage === 'foundation' && <FoundationPage />}
-      {currentPage === 'interior-design' && <InteriorDesignPage />}
       {currentPage === 'corporate-training' && <CorporateTrainingPage />}
       {currentPage === 'coaching' && <CoachingPage />}
       {currentPage === 'mediation' && <MediationPage />}
@@ -66,7 +65,6 @@ const Navigation = ({ scrolled, isMenuOpen, setIsMenuOpen, navigateTo, currentPa
           <div className="dropdown-content">
             <span onClick={() => navigateTo('hr-consulting')}>HR Consulting</span>
             <span onClick={() => navigateTo('foundation')}>Foundation</span>
-            <span onClick={() => navigateTo('interior-design')}>Interior Design</span>
             <span onClick={() => navigateTo('corporate-training')}>Corporate Training</span>
             <span onClick={() => navigateTo('coaching')}>Coaching & Mentorship</span>
             <span onClick={() => navigateTo('mediation')}>Mediation</span>
@@ -86,7 +84,6 @@ const Navigation = ({ scrolled, isMenuOpen, setIsMenuOpen, navigateTo, currentPa
         <span onClick={() => navigateTo('about')} className="mobile-link">About</span>
         <span onClick={() => navigateTo('hr-consulting')} className="mobile-link">HR Consulting</span>
         <span onClick={() => navigateTo('foundation')} className="mobile-link">Foundation</span>
-        <span onClick={() => navigateTo('interior-design')} className="mobile-link">Interior Design</span>
         <span onClick={() => navigateTo('corporate-training')} className="mobile-link">Corporate Training</span>
         <span onClick={() => navigateTo('coaching')} className="mobile-link">Coaching & Mentorship</span>
         <span onClick={() => navigateTo('mediation')} className="mobile-link">Mediation</span>
@@ -103,7 +100,6 @@ const HomePage = ({ navigateTo }) => {
   const testimonials = [
     { name: 'Saraphine Nthenge', text: 'Grace Garnet Group transformed my CV, and I landed my dream job within weeks!', role: 'Marketing Executive' },
     { name: 'James Mwaniki', text: 'Their LinkedIn coaching was a game changer. My profile now attracts recruiters daily!', role: 'Software Engineer' },
-    { name: 'Patricia Otieno', text: 'The interior design team created a space that truly reflects our brand identity.', role: 'CEO, Tech Startup' },
   ];
 
   useEffect(() => {
@@ -129,14 +125,6 @@ const HomePage = ({ navigateTo }) => {
       color: 'pink',
       description: 'Charitable initiatives supporting communities and fostering positive change',
       image: '/images/foundation-volunteers.png'
-    },
-    { 
-      id: 'interior-design', 
-      name: 'Interior Design', 
-      icon: '🎨', 
-      color: 'purple',
-      description: 'Creating inspiring spaces that reflect your vision and enhance functionality',
-      image: '/images/interior-design-1.jpeg'
     },
     { 
       id: 'corporate-training', 
@@ -178,7 +166,7 @@ const HomePage = ({ navigateTo }) => {
             <span>East Africa's Premier Professional Services Provider</span>
           </div>
           <h1 className="hero-title-enhanced animate-fade-in">
-            Empowering <span className="gradient-text-enhanced">Excellence</span><br />
+            Empowering Excellence<br />
             Across Every Dimension
           </h1>
           <p className="hero-description-enhanced animate-fade-in-delay">
@@ -217,7 +205,7 @@ const HomePage = ({ navigateTo }) => {
             <span className="section-badge">Our Expertise</span>
             <h2 className="section-title-new">Comprehensive Solutions for Every Need</h2>
             <p className="section-description-new">
-              Six specialized divisions working in harmony to deliver exceptional results
+              Five specialized divisions working in harmony to deliver exceptional results
             </p>
           </div>
 
@@ -402,22 +390,6 @@ const ServicePageTemplate = ({ title, icon, description, features, imagePath, im
 );
 
 // UPDATED Service Pages with Images
-const InteriorDesignPage = () => (
-  <ServicePageTemplate
-    title="Interior Design Services"
-    icon="🎨"
-    description="Transform spaces into inspiring environments that reflect your vision and enhance functionality."
-    imagePath="/images/interior-design-1.jpeg"
-    imageAlt="Professional interior design showcase"
-    features={[
-      { icon: '🏠', title: 'Residential Design', description: 'Beautiful, functional homes that reflect your lifestyle' },
-      { icon: '🏢', title: 'Commercial Spaces', description: 'Office and retail environments that enhance productivity' },
-      { icon: '📐', title: 'Space Planning', description: 'Optimize every square foot for maximum functionality' },
-      { icon: '💡', title: 'Lighting Design', description: 'Strategic lighting that transforms ambiance' }
-    ]}
-  />
-);
-
 const FoundationPage = () => (
   <ServicePageTemplate
     title="Grace Garnet Foundation"
@@ -669,7 +641,6 @@ const Footer = ({ navigateTo }) => (
           <ul className="footer-list">
             <li><span onClick={() => navigateTo('hr-consulting')} className="footer-link">HR Consulting</span></li>
             <li><span onClick={() => navigateTo('foundation')} className="footer-link">Foundation</span></li>
-            <li><span onClick={() => navigateTo('interior-design')} className="footer-link">Interior Design</span></li>
             <li><span onClick={() => navigateTo('corporate-training')} className="footer-link">Corporate Training</span></li>
           </ul>
         </div>
