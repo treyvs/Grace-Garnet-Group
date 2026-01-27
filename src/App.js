@@ -113,15 +113,13 @@ const HomePage = ({ navigateTo }) => {
     { 
       id: 'hr-consulting', 
       name: 'HR Consulting', 
-      icon: '👥', 
       color: 'red',
       description: 'Professional CV writing, LinkedIn optimization, and career coaching services',
-      image: null // No image provided yet
+      image: '/images/hr-consulting.png'
     },
     { 
       id: 'foundation', 
       name: 'Foundation', 
-      icon: '❤️', 
       color: 'pink',
       description: 'Charitable initiatives supporting communities and fostering positive change',
       image: '/images/foundation-volunteers.png'
@@ -129,23 +127,20 @@ const HomePage = ({ navigateTo }) => {
     { 
       id: 'corporate-training', 
       name: 'Corporate Training', 
-      icon: '📚', 
       color: 'blue',
       description: 'Customized training programs that empower organizational growth',
       image: '/images/corporate-training.png'
     },
     { 
       id: 'coaching', 
-      name: 'Coaching & Mentorship', 
-      icon: '🎯', 
+      name: 'Coaching & Mentorship',  
       color: 'green',
       description: 'Personalized guidance to unlock your potential and achieve goals',
-      image: null // No image provided yet
+      image: '/images/coaching and mentoring.png'
     },
     { 
       id: 'mediation', 
       name: 'Mediation', 
-      icon: '⚖️', 
       color: 'indigo',
       description: 'Professional conflict resolution for lasting solutions',
       image: '/images/mediation.png'
@@ -183,10 +178,10 @@ const HomePage = ({ navigateTo }) => {
           
           <div className="stats-grid-enhanced">
             {[
-              { icon: '🎯', number: '6', label: 'Service Divisions' },
-              { icon: '👥', number: '500+', label: 'Clients Served' },
-              { icon: '⭐', number: '99%', label: 'Satisfaction Rate' },
-              { icon: '🏆', number: '10+', label: 'Years Experience' }
+              {number: '6', label: 'Service Divisions' },
+              {number: '500+', label: 'Clients Served' },
+              {number: '99%', label: 'Satisfaction Rate' },
+              {number: '10+', label: 'Years Experience' }
             ].map((stat, idx) => (
               <div key={idx} className="stat-card-enhanced">
                 <div className="stat-icon">{stat.icon}</div>
@@ -328,7 +323,6 @@ const AboutPage = () => (
       <div className="container">
         <div className="mvv-grid">
           <div className="mvv-card">
-            <div className="mvv-icon">🎯</div>
             <h3>Our Mission</h3>
             <p>To empower individuals and organizations through expert guidance, innovative solutions, and unwavering commitment to excellence.</p>
           </div>
@@ -338,7 +332,6 @@ const AboutPage = () => (
             <p>To be East Africa's leading integrated professional services provider, recognized for transforming careers, organizations, and communities.</p>
           </div>
           <div className="mvv-card">
-            <div className="mvv-icon">💎</div>
             <h3>Our Values</h3>
             <p>Excellence, Integrity, Innovation, Client-Focus, and Collaboration drive everything we do.</p>
           </div>
@@ -393,15 +386,14 @@ const ServicePageTemplate = ({ title, icon, description, features, imagePath, im
 const FoundationPage = () => (
   <ServicePageTemplate
     title="Grace Garnet Foundation"
-    icon="❤️"
     description="Creating lasting positive change through education, skills development, and social impact programs."
     imagePath="/images/foundation-volunteers.png"
     imageAlt="Foundation volunteers helping community"
     features={[
-      { icon: '🎓', title: 'Educational Support', description: 'Scholarships and mentorship for underprivileged youth' },
-      { icon: '👷', title: 'Skills Development', description: 'Vocational training programs that create opportunities' },
-      { icon: '🤝', title: 'Community Outreach', description: 'Grassroots initiatives addressing local needs' },
-      { icon: '💪', title: 'Youth Empowerment', description: 'Leadership and entrepreneurship programs' }
+      {title: 'Educational Support', description: 'Scholarships and mentorship for underprivileged youth' },
+      {title: 'Skills Development', description: 'Vocational training programs that create opportunities' },
+      {title: 'Community Outreach', description: 'Grassroots initiatives addressing local needs' },
+      {title: 'Youth Empowerment', description: 'Leadership and entrepreneurship programs' }
     ]}
   />
 );
@@ -409,15 +401,14 @@ const FoundationPage = () => (
 const CorporateTrainingPage = () => (
   <ServicePageTemplate
     title="Corporate Training & Development"
-    icon="📚"
     description="Empower your organization with customized training programs that drive real results."
     imagePath="/images/corporate-training.png"
     imageAlt="Corporate training session in progress"
     features={[
-      { icon: '👔', title: 'Leadership Development', description: 'Build effective leaders who inspire teams' },
-      { icon: '🤝', title: 'Team Building', description: 'Strengthen team dynamics and collaboration' },
-      { icon: '📊', title: 'Skills Training', description: 'Technical and soft skills development' },
-      { icon: '🎯', title: 'Performance Management', description: 'Drive organizational excellence' }
+      {title: 'Leadership Development', description: 'Build effective leaders who inspire teams' },
+      {title: 'Team Building', description: 'Strengthen team dynamics and collaboration' },
+      {title: 'Skills Training', description: 'Technical and soft skills development' },
+      {title: 'Performance Management', description: 'Drive organizational excellence' }
     ]}
   />
 );
@@ -425,15 +416,14 @@ const CorporateTrainingPage = () => (
 const MediationPage = () => (
   <ServicePageTemplate
     title="Mediation Services"
-    icon="⚖️"
     description="Professional conflict resolution for lasting solutions and restored relationships."
     imagePath="/images/mediation.png"
     imageAlt="Professional mediation session"
     features={[
-      { icon: '🏢', title: 'Workplace Mediation', description: 'Resolve workplace conflicts professionally' },
-      { icon: '💼', title: 'Commercial Disputes', description: 'Business dispute resolution services' },
-      { icon: '👨‍👩‍👧', title: 'Family Mediation', description: 'Compassionate family conflict resolution' },
-      { icon: '🤝', title: 'Conflict Resolution Training', description: 'Build conflict resolution skills in your team' }
+      {title: 'Workplace Mediation', description: 'Resolve workplace conflicts professionally' },
+      {title: 'Commercial Disputes', description: 'Business dispute resolution services' },
+      {title: 'Family Mediation', description: 'Compassionate family conflict resolution' },
+      {title: 'Conflict Resolution Training', description: 'Build conflict resolution skills in your team' }
     ]}
   />
 );
@@ -442,13 +432,14 @@ const MediationPage = () => (
 const HRConsultingPage = () => (
   <ServicePageTemplate
     title="HR Consulting & Career Services"
-    icon="👥"
     description="Elevate your career with professional CV writing, LinkedIn optimization, and career coaching."
+    imagePath="/images/hr-consulting.png"
+    imageAlt="HR consulting session"
     features={[
-      { icon: '📄', title: 'Professional CV Writing', description: 'ATS-optimized CVs that showcase your unique value' },
-      { icon: '💼', title: 'LinkedIn Optimization', description: 'Transform your profile into a powerful personal brand' },
-      { icon: '🎤', title: 'Interview Coaching', description: 'Master interviews with personalized coaching' },
-      { icon: '🗺️', title: 'Career Counseling', description: 'Navigate career transitions with expert guidance' }
+      {title: 'Professional CV Writing', description: 'ATS-optimized CVs that showcase your unique value' },
+      {title: 'LinkedIn Optimization', description: 'Transform your profile into a powerful personal brand' },
+      {title: 'Interview Coaching', description: 'Master interviews with personalized coaching' },
+      {title: 'Career Counseling', description: 'Navigate career transitions with expert guidance' }
     ]}
   />
 );
@@ -456,13 +447,14 @@ const HRConsultingPage = () => (
 const CoachingPage = () => (
   <ServicePageTemplate
     title="Coaching & Mentorship"
-    icon="🎯"
     description="Personalized guidance to unlock your potential and achieve your goals."
+    imagePath="/images/coaching and mentoring.png"
+    imageAlt="Coaching and mentorship session"
     features={[
-      { icon: '💼', title: 'Executive Coaching', description: 'Leadership coaching for executives' },
-      { icon: '🗺️', title: 'Career Mentorship', description: 'Strategic career guidance' },
-      { icon: '🌱', title: 'Personal Development', description: 'Holistic growth programs' },
-      { icon: '🎯', title: 'Goal Achievement', description: 'Structured goal-setting support' }
+      {title: 'Executive Coaching', description: 'Leadership coaching for executives' },
+      {title: 'Career Mentorship', description: 'Strategic career guidance' },
+      {title: 'Personal Development', description: 'Holistic growth programs' },
+      {title: 'Goal Achievement', description: 'Structured goal-setting support' }
     ]}
   />
 );
@@ -646,7 +638,7 @@ const Footer = ({ navigateTo }) => (
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 Grace Garnet Group Ltd. All Rights Reserved.</p>
+        <p>&copy; 2025 Grace Garnet Group Ltd. All Rights Reserved.</p>
       </div>
     </div>
   </footer>
